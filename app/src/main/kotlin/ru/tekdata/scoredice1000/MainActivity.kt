@@ -1,11 +1,14 @@
 package ru.tekdata.scoredice1000
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import androidx.core.text.set
+import androidx.core.widget.addTextChangedListener
 import ru.tekdata.scoredice1000.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -44,8 +47,22 @@ class MainActivity : AppCompatActivity() {
         binding.buttonBackSpaseScorePlayer5.setOnClickListener {clickBackSpaceForScore(binding.scorePlayer5)}
         binding.buttonBackSpaseScorePlayer6.setOnClickListener {clickBackSpaceForScore(binding.scorePlayer6)}
 
+        binding.scorePlayer1.addTextChangedListener { binding.scorePlayer1Upsidedown.setText(binding.scorePlayer1.text) }
+        binding.scorePlayer2.addTextChangedListener { binding.scorePlayer2Upsidedown.setText(binding.scorePlayer2.text) }
+        binding.scorePlayer3.addTextChangedListener { binding.scorePlayer3Upsidedown.setText(binding.scorePlayer3.text) }
+        binding.scorePlayer4.addTextChangedListener { binding.scorePlayer4Upsidedown.setText(binding.scorePlayer4.text) }
+        binding.scorePlayer5.addTextChangedListener { binding.scorePlayer5Upsidedown.setText(binding.scorePlayer5.text) }
+        binding.scorePlayer6.addTextChangedListener { binding.scorePlayer6Upsidedown.setText(binding.scorePlayer6.text) }
+
+        binding.scorePlayer1.setOnClickListener{
+            val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+            inputMethodManager.hideSoftInputFromWindow(binding.scorePlayer1.windowToken, 0)
+        }
+
 
     }
+
+
 
     private fun buttonNumberOnClick(buttonNumber: Button) {
         val v:View? = currentFocus

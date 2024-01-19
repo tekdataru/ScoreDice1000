@@ -11,7 +11,7 @@ android {
         applicationId "ru.tekdata.scoredice1000"
         minSdk 23
         targetSdk 33
-        versionCode 1
+        versionCode 20240119
         versionName "2024.01.19"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
