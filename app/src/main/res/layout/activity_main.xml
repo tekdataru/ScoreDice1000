@@ -23,16 +23,21 @@
         >
 
         <EditText
-            android:layout_width="200dp"
-            android:layout_height="match_parent"
             android:id="@+id/namePlayer1"
-            />
+            android:layout_width="150dp"
+            android:layout_height="match_parent" />
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
             android:id="@+id/scorePlayer1"
-            />
+            android:layout_width="75dp"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:id="@+id/buttonBackSpaseScorePlayer1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="5dp"
+            android:text="&lt;" />
     </LinearLayout>
 
         <LinearLayout
@@ -43,16 +48,21 @@
             >
 
             <EditText
-                android:layout_width="200dp"
-                android:layout_height="match_parent"
                 android:id="@+id/namePlayer2"
-                />
+                android:layout_width="150dp"
+                android:layout_height="match_parent" />
 
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
                 android:id="@+id/scorePlayer2"
-                />
+                android:layout_width="75dp"
+                android:layout_height="match_parent" />
+
+            <Button
+                android:id="@+id/buttonBackSpaseScorePlayer2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="5dp"
+                android:text="&lt;" />
         </LinearLayout>
 
         <LinearLayout
@@ -63,16 +73,21 @@
             >
 
             <EditText
-                android:layout_width="200dp"
-                android:layout_height="match_parent"
                 android:id="@+id/namePlayer3"
-                />
+                android:layout_width="150dp"
+                android:layout_height="match_parent" />
 
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
                 android:id="@+id/scorePlayer3"
-                />
+                android:layout_width="75dp"
+                android:layout_height="match_parent" />
+
+            <Button
+                android:id="@+id/buttonBackSpaseScorePlayer3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="5dp"
+                android:text="&lt;" />
         </LinearLayout>
         <LinearLayout
             android:id="@+id/linearPlayer4"
@@ -82,16 +97,21 @@
             >
 
             <EditText
-                android:layout_width="200dp"
-                android:layout_height="match_parent"
                 android:id="@+id/namePlayer4"
-                />
+                android:layout_width="150dp"
+                android:layout_height="match_parent" />
 
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
                 android:id="@+id/scorePlayer4"
-                />
+                android:layout_width="75dp"
+                android:layout_height="match_parent" />
+
+            <Button
+                android:id="@+id/buttonBackSpaseScorePlayer4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="5dp"
+                android:text="&lt;" />
         </LinearLayout>
         <LinearLayout
             android:id="@+id/linearPlayer5"
@@ -101,16 +121,21 @@
             >
 
             <EditText
-                android:layout_width="200dp"
-                android:layout_height="match_parent"
                 android:id="@+id/namePlayer5"
-                />
+                android:layout_width="150dp"
+                android:layout_height="match_parent" />
 
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
                 android:id="@+id/scorePlayer5"
-                />
+                android:layout_width="75dp"
+                android:layout_height="match_parent" />
+
+            <Button
+                android:id="@+id/buttonBackSpaseScorePlayer5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="5dp"
+                android:text="&lt;" />
         </LinearLayout>
         <LinearLayout
             android:id="@+id/linearPlayer6"
@@ -120,21 +145,26 @@
             >
 
             <EditText
-                android:layout_width="200dp"
-                android:layout_height="match_parent"
                 android:id="@+id/namePlayer6"
-                />
+                android:layout_width="150dp"
+                android:layout_height="match_parent" />
 
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
                 android:id="@+id/scorePlayer6"
-                />
+                android:layout_width="75dp"
+                android:layout_height="match_parent" />
+
+            <Button
+                android:id="@+id/buttonBackSpaseScorePlayer6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="5dp"
+                android:text="&lt;" />
         </LinearLayout>
 
 
-
         <LinearLayout
+            android:layout_marginTop="20dp"
             android:id="@+id/linearNumbButtons123"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -142,26 +172,25 @@
             >
 
             <Button
+                android:id="@+id/button1"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:id="@+id/button1"
-                android:text="1"
                 android:layout_marginRight="5dp"
-                />
+                android:text="1" />
+
             <Button
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
                 android:id="@+id/button2"
-                android:text="2"
-                android:layout_marginRight="5dp"
-                />
-            <Button
                 android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:id="@+id/button3"
-                android:text="3"
+                android:layout_height="50dp"
                 android:layout_marginRight="5dp"
-                />
+                android:text="2" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="5dp"
+                android:text="3" />
         </LinearLayout>
         <LinearLayout
             android:id="@+id/linearNumbButtons456"
@@ -171,26 +200,25 @@
             >
 
             <Button
+                android:id="@+id/button4"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:id="@+id/button4"
-                android:text="4"
                 android:layout_marginRight="5dp"
-                />
+                android:text="4" />
+
             <Button
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
                 android:id="@+id/button5"
-                android:text="5"
-                android:layout_marginRight="5dp"
-                />
-            <Button
                 android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:id="@+id/button6"
-                android:text="6"
+                android:layout_height="50dp"
                 android:layout_marginRight="5dp"
-                />
+                android:text="5" />
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="5dp"
+                android:text="6" />
         </LinearLayout>
         <LinearLayout
             android:id="@+id/linearNumbButtons789"
@@ -200,26 +228,25 @@
             >
 
             <Button
+                android:id="@+id/button7"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:id="@+id/button7"
-                android:text="7"
                 android:layout_marginRight="5dp"
-                />
+                android:text="7" />
+
             <Button
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
                 android:id="@+id/button8"
-                android:text="8"
-                android:layout_marginRight="5dp"
-                />
-            <Button
                 android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:id="@+id/button9"
-                android:text="9"
+                android:layout_height="50dp"
                 android:layout_marginRight="5dp"
-                />
+                android:text="8" />
+
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="5dp"
+                android:text="9" />
         </LinearLayout>
         <LinearLayout
             android:id="@+id/linearNumbButtons0"
@@ -229,64 +256,20 @@
             >
 
             <Button
+                android:id="@+id/button0"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:id="@+id/buttonX"
-                android:text="X"
                 android:layout_marginRight="5dp"
-                />
-            <Button
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:id="@+id/button0"
-                android:text="0"
-                android:layout_marginRight="5dp"
-                />
-            <Button
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:id="@+id/buttonBackSpase"
-                android:text="-"
-                android:layout_marginRight="5dp"
-                />
+                android:text="0" />
 
         </LinearLayout>
-
-        <EditText
-            android:layout_width="200dp"
-            android:layout_height="match_parent"
-            android:id="@+id/editTempSum"
-            />
-
-        <Button
-            android:layout_width="150dp"
-            android:layout_height="70dp"
-            android:id="@+id/buttonSetAndGo"
-            android:text="Set and go"
-            />
 
         <LinearLayout
             android:id="@+id/linearLastNumbers"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            >
-
-
-            <EditText
-                android:id="@+id/editTextLastNumbers"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:editable="false"
-                android:text="Last nubmers" />
-            <EditText
-                android:id="@+id/editLastNumbers"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:text="" />
-
-
-        </LinearLayout>
+            />
 
     </LinearLayout>
 

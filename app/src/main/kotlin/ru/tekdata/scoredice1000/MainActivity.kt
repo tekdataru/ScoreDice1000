@@ -3,7 +3,9 @@ package ru.tekdata.scoredice1000
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.EditText
+import androidx.core.text.set
 import ru.tekdata.scoredice1000.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -20,89 +22,50 @@ class MainActivity : AppCompatActivity() {
 //      binding.namePlayer5.setText("Серега")
 //      binding.namePlayer6.setText("Вика")
 
-        var playerNumb:Int = 0
-        var activeEditScore = binding.scorePlayer1
-        var activeEditName = binding.namePlayer1
-        var activeName = binding.namePlayer1.text
 
-        binding.buttonSetAndGo.setOnClickListener {
-            playerNumb++
-
-            if (playerNumb > 6) playerNumb = 1
-
-            //if (activeEditScore.text.isEmpty()) activeEditScore.setText("0")
-            if (binding.editTempSum.text.isEmpty()) binding.editTempSum.setText("0")
-
-            //activeEditScore.setText("" + (activeEditScore.text.toString().toInt() + binding.editTempSum.text.toString().toInt()).toString())
-            activeEditScore.setText(binding.editTempSum.text.toString())
-            if (!binding.editTempSum.text.toString().equals("") && !binding.editTempSum.text.toString().equals("0") )
-            binding.editLastNumbers.setText("" + binding.editTempSum.text.toString() + ", " + binding.editLastNumbers.text.toString())
-
-            //binding.editLastNumbers.setText("" + binding.editTempSum.text.toString() + ", " )
-            if (activeEditScore.text.equals("0".toString())) activeEditScore.setText("")
-            //activeEditScore.setBackgroundColor(0)
-            activeEditName.setText(activeName)
-
-            binding.editTempSum.setText("")
-
-            //val editPlayerScore = getViewOfScoreByNumber(playerNumb)
-            val editPlayerScore =
-                if (playerNumb == 1) binding.scorePlayer1
-                else if (playerNumb == 2) binding.scorePlayer2
-                else if (playerNumb == 3) binding.scorePlayer3
-                else if (playerNumb == 4) binding.scorePlayer4
-                else if (playerNumb == 5) binding.scorePlayer5
-                else binding.scorePlayer6
-
-            val editPlayerName =
-                if (playerNumb == 1) binding.namePlayer1
-                else if (playerNumb == 2) binding.namePlayer2
-                else if (playerNumb == 3) binding.namePlayer3
-                else if (playerNumb == 4) binding.namePlayer4
-                else if (playerNumb == 5) binding.namePlayer5
-                else binding.namePlayer6
+        binding.button0.setOnClickListener { buttonNumberOnClick((it as Button)) }
+        binding.button1.setOnClickListener { buttonNumberOnClick((it as Button)) }
+        binding.button2.setOnClickListener { buttonNumberOnClick((it as Button)) }
+        binding.button3.setOnClickListener { buttonNumberOnClick((it as Button)) }
+        binding.button4.setOnClickListener { buttonNumberOnClick((it as Button)) }
+        binding.button5.setOnClickListener { buttonNumberOnClick((it as Button)) }
+        binding.button6.setOnClickListener { buttonNumberOnClick((it as Button)) }
+        binding.button7.setOnClickListener { buttonNumberOnClick((it as Button)) }
+        binding.button8.setOnClickListener { buttonNumberOnClick((it as Button)) }
+        binding.button9.setOnClickListener { buttonNumberOnClick((it as Button)) }
 
 
 
-            //editPlayerScore.setBackgroundColor(5)
 
-            activeEditScore = editPlayerScore
-            activeEditName = editPlayerName
-
-            activeName = activeEditName.text
-
-            //editPlayerScore.setText("adfsdf")
-            editPlayerName.setText("" + activeName + " --->")
+        binding.buttonBackSpaseScorePlayer1.setOnClickListener {clickBackSpaceForScore(binding.scorePlayer1)}
+        binding.buttonBackSpaseScorePlayer2.setOnClickListener {clickBackSpaceForScore(binding.scorePlayer2)}
+        binding.buttonBackSpaseScorePlayer3.setOnClickListener {clickBackSpaceForScore(binding.scorePlayer3)}
+        binding.buttonBackSpaseScorePlayer4.setOnClickListener {clickBackSpaceForScore(binding.scorePlayer4)}
+        binding.buttonBackSpaseScorePlayer5.setOnClickListener {clickBackSpaceForScore(binding.scorePlayer5)}
+        binding.buttonBackSpaseScorePlayer6.setOnClickListener {clickBackSpaceForScore(binding.scorePlayer6)}
 
 
-            if (editPlayerName.text.toString().equals(" --->")) {
-                editPlayerScore.setText("")
-                activeEditScore.text.clear()
-                binding.buttonSetAndGo.callOnClick()
-            }
+    }
+
+    private fun buttonNumberOnClick(buttonNumber: Button) {
+        val v:View? = currentFocus
+
+        if (v is EditText) {
+            val editTemp:EditText = (v as EditText)
+            editTemp.setText("" + editTemp.text + buttonNumber.text)
+            editTemp.setSelection(editTemp.length())
         }
-
-        binding.button0.setOnClickListener {binding.editTempSum.setText("" + binding.editTempSum.text + binding.button0.text)}
-        binding.button1.setOnClickListener {binding.editTempSum.setText("" + binding.editTempSum.text + binding.button1.text)}
-        binding.button2.setOnClickListener {binding.editTempSum.setText("" + binding.editTempSum.text + binding.button2.text)}
-        binding.button3.setOnClickListener {binding.editTempSum.setText("" + binding.editTempSum.text + binding.button3.text)}
-        binding.button4.setOnClickListener {binding.editTempSum.setText("" + binding.editTempSum.text + binding.button4.text)}
-        binding.button5.setOnClickListener {binding.editTempSum.setText("" + binding.editTempSum.text + binding.button5.text)}
-        binding.button6.setOnClickListener {binding.editTempSum.setText("" + binding.editTempSum.text + binding.button6.text)}
-        binding.button7.setOnClickListener {binding.editTempSum.setText("" + binding.editTempSum.text + binding.button7.text)}
-        binding.button8.setOnClickListener {binding.editTempSum.setText("" + binding.editTempSum.text + binding.button8.text)}
-        binding.button9.setOnClickListener {binding.editTempSum.setText("" + binding.editTempSum.text + binding.button9.text)}
-
-        binding.buttonX.setOnClickListener {binding.editTempSum.setText("0")}
-        binding.buttonBackSpase.setOnClickListener {
-            val ets = binding.editTempSum
-            if (ets.text.isEmpty()) {return@setOnClickListener}
-            ets.setText(ets.text.toString().substring(0, ets.text.length - 1))
+    }
+    private fun clickBackSpaceForScore(editTemp: EditText){
+        editTemp.requestFocus()
+        if (editTemp.text.isEmpty()) {
+            editTemp.setSelection(editTemp.length())
+            return
         }
+        editTemp.setText(editTemp.text.toString().substring(0, editTemp.text.length - 1))
+        editTemp.setSelection(editTemp.length())
+    }
 
-
-
-}
 
     private fun getViewOfScoreByNumber(playerNumb: Int): EditText {
 
