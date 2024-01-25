@@ -4,10 +4,12 @@ import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
+import androidx.appcompat.app.ActionBar.LayoutParams
 import androidx.core.text.set
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
@@ -77,6 +79,98 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        binding.scorePlayer1.setOnClickListener{
+//            val view:View? = this.getCurrentFocus();
+//            if (view != null) {
+//                val imm:InputMethodManager = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+//                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+//            }
+        }
+
+        binding.buttonSettings.setOnClickListener{
+            if (binding.layoutSettings.visibility == LinearLayout.GONE)
+                binding.layoutSettings.visibility = LinearLayout.VISIBLE
+            else binding.layoutSettings.visibility = LinearLayout.GONE
+        }
+
+        binding.buttonLargeButtonsNumbers.setOnClickListener {
+
+            val button = binding.buttonLargeButtonsNumbers;
+            var widthInPixels:Int = 150
+            var heightInPixels:Int = 150
+
+
+
+            if (button.text.equals("Кнопки +")) {
+                button.setText("Кнопки -")
+                widthInPixels = (binding.button0.width * 1.5).toInt()
+                heightInPixels = (binding.button0.height * 1.5).toInt()
+            } else {
+                button.setText("Кнопки +")
+                widthInPixels = (binding.button0.width / 1.5).toInt()
+                heightInPixels = (binding.button0.height / 1.5).toInt()
+            }
+
+            buttonSetLayoutParams(binding.button0, widthInPixels, heightInPixels)
+            buttonSetLayoutParams(binding.button1, widthInPixels, heightInPixels)
+            buttonSetLayoutParams(binding.button2, widthInPixels, heightInPixels)
+            buttonSetLayoutParams(binding.button3, widthInPixels, heightInPixels)
+            buttonSetLayoutParams(binding.button4, widthInPixels, heightInPixels)
+            buttonSetLayoutParams(binding.button5, widthInPixels, heightInPixels)
+            buttonSetLayoutParams(binding.button6, widthInPixels, heightInPixels)
+            buttonSetLayoutParams(binding.button7, widthInPixels, heightInPixels)
+            buttonSetLayoutParams(binding.button8, widthInPixels, heightInPixels)
+            buttonSetLayoutParams(binding.button9, widthInPixels, heightInPixels)
+        }
+
+        binding.buttonColorsForPlayers.setOnClickListener {
+            val button = binding.buttonColorsForPlayers;
+
+            if (button.text.equals("Цвета +")) {
+                button.setText("Цвета -")
+
+                binding.namePlayer2.setTextColor(android.graphics.Color.BLUE)
+                binding.namePlayer3.setTextColor(android.graphics.Color.RED)
+                binding.namePlayer4.setTextColor(android.graphics.Color.GREEN)
+                binding.namePlayer5.setTextColor(android.graphics.Color.YELLOW)
+                binding.namePlayer6.setTextColor(android.graphics.Color.MAGENTA)
+
+                binding.scorePlayer2.setTextColor(android.graphics.Color.BLUE)
+                binding.scorePlayer3.setTextColor(android.graphics.Color.RED)
+                binding.scorePlayer4.setTextColor(android.graphics.Color.GREEN)
+                binding.scorePlayer5.setTextColor(android.graphics.Color.YELLOW)
+                binding.scorePlayer6.setTextColor(android.graphics.Color.MAGENTA)
+
+                binding.scorePlayer2Upsidedown.setTextColor(android.graphics.Color.BLUE)
+                binding.scorePlayer3Upsidedown.setTextColor(android.graphics.Color.RED)
+                binding.scorePlayer4Upsidedown.setTextColor(android.graphics.Color.GREEN)
+                binding.scorePlayer5Upsidedown.setTextColor(android.graphics.Color.YELLOW)
+                binding.scorePlayer6Upsidedown.setTextColor(android.graphics.Color.MAGENTA)
+            } else {
+                button.setText("Цвета +")
+
+                val defColor = binding.scorePlayer1.textColors.defaultColor
+
+                binding.namePlayer2.setTextColor(defColor)
+                binding.namePlayer3.setTextColor(defColor)
+                binding.namePlayer4.setTextColor(defColor)
+                binding.namePlayer5.setTextColor(defColor)
+                binding.namePlayer6.setTextColor(defColor)
+
+                binding.scorePlayer2.setTextColor(defColor)
+                binding.scorePlayer3.setTextColor(defColor)
+                binding.scorePlayer4.setTextColor(defColor)
+                binding.scorePlayer5.setTextColor(defColor)
+                binding.scorePlayer6.setTextColor(defColor)
+
+                binding.scorePlayer2Upsidedown.setTextColor(defColor)
+                binding.scorePlayer3Upsidedown.setTextColor(defColor)
+                binding.scorePlayer4Upsidedown.setTextColor(defColor)
+                binding.scorePlayer5Upsidedown.setTextColor(defColor)
+                binding.scorePlayer6Upsidedown.setTextColor(defColor)
+            }
+        }
+
 
     }
 
@@ -90,6 +184,13 @@ class MainActivity : AppCompatActivity() {
             editTemp.setText("" + editTemp.text + buttonNumber.text)
             editTemp.setSelection(editTemp.length())
         }
+    }
+
+    private fun buttonSetLayoutParams(buttonNumber: Button, widthInPixels: Int, heightInPixels: Int) {
+        val layoutParams = buttonNumber.layoutParams
+        layoutParams.width = widthInPixels // in pixels
+        layoutParams.height = heightInPixels // in pixels
+        buttonNumber.layoutParams = layoutParams
     }
     private fun clickBackSpaceForScore(editTemp: EditText){
         editTemp.requestFocus()

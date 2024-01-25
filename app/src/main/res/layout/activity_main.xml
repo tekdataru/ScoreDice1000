@@ -388,13 +388,43 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="bottom">
+
         <Button
-            android:id="@+id/buttonHideEmptyPlayers"
-            android:layout_width="90dp"
+            android:id="@+id/buttonSettings"
+            android:layout_width="60dp"
             android:layout_height="60dp"
+            android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:textSize="12sp"
-            android:text="Скрыть" />
+            app:icon="@drawable/baseline_settings_24" />
+
+        <LinearLayout
+            android:id="@+id/layoutSettings"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:visibility="gone">
+            <Button
+                android:id="@+id/buttonHideEmptyPlayers"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:layout_marginRight="5dp"
+                android:text="Скрыть"
+                android:layout_gravity="bottom"/>
+            <Button
+                android:id="@+id/buttonLargeButtonsNumbers"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:layout_marginRight="5dp"
+                android:text="Кнопки +"
+                android:layout_gravity="bottom"/>
+            <Button
+                android:id="@+id/buttonColorsForPlayers"
+                android:layout_width="105dp"
+                android:layout_height="60dp"
+                android:layout_marginRight="5dp"
+                android:text="Цвета +"
+                android:layout_gravity="bottom"/>
+        </LinearLayout>
     </LinearLayout>
 
 
