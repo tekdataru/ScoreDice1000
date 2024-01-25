@@ -7,7 +7,10 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
+import android.widget.LinearLayout
 import androidx.core.text.set
+import androidx.core.view.isInvisible
+import androidx.core.view.isVisible
 import androidx.core.widget.addTextChangedListener
 import ru.tekdata.scoredice1000.databinding.ActivityMainBinding
 
@@ -37,9 +40,6 @@ class MainActivity : AppCompatActivity() {
         binding.button8.setOnClickListener { buttonNumberOnClick((it as Button)) }
         binding.button9.setOnClickListener { buttonNumberOnClick((it as Button)) }
 
-
-
-
         binding.buttonBackSpaseScorePlayer1.setOnClickListener {clickBackSpaceForScore(binding.scorePlayer1)}
         binding.buttonBackSpaseScorePlayer2.setOnClickListener {clickBackSpaceForScore(binding.scorePlayer2)}
         binding.buttonBackSpaseScorePlayer3.setOnClickListener {clickBackSpaceForScore(binding.scorePlayer3)}
@@ -57,6 +57,24 @@ class MainActivity : AppCompatActivity() {
         binding.scorePlayer1.setOnClickListener{
             val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
             inputMethodManager.hideSoftInputFromWindow(binding.scorePlayer1.windowToken, 0)
+        }
+
+        binding.buttonHideEmptyPlayers.setOnClickListener{
+            var vv = LinearLayout.VISIBLE
+
+            if (binding.buttonHideEmptyPlayers.text.equals("Скрыть")) {
+                binding.buttonHideEmptyPlayers.setText("Показать")
+                vv = LinearLayout.GONE
+            } else binding.buttonHideEmptyPlayers.setText("Скрыть")
+
+            if (binding.namePlayer1.text.isEmpty()) {binding.linearPlayer1.visibility = vv}
+            if (binding.namePlayer2.text.isEmpty()) {binding.linearPlayer2.visibility = vv}
+            if (binding.namePlayer3.text.isEmpty()) {binding.linearPlayer3.visibility = vv}
+            if (binding.namePlayer4.text.isEmpty()) {binding.linearPlayer4.visibility = vv}
+            if (binding.namePlayer5.text.isEmpty()) {binding.linearPlayer5.visibility = vv}
+            if (binding.namePlayer6.text.isEmpty()) {binding.linearPlayer6.visibility = vv}
+
+
         }
 
 

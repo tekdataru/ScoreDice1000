@@ -23,14 +23,8 @@
         >
 
         <EditText
-            android:id="@+id/namePlayer1"
-            android:layout_width="140dp"
-            android:layout_height="match_parent"
-            android:textSize="25sp" />
-
-        <EditText
             android:id="@+id/scorePlayer1Upsidedown"
-            android:layout_width="80dp"
+            android:layout_width="70dp"
             android:layout_height="match_parent"
             android:background="@android:color/transparent"
             android:editable="false"
@@ -38,6 +32,15 @@
             android:rotation="180"
             android:singleLine="false"
             android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/namePlayer1"
+            android:layout_width="140dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:textSize="25sp" />
+
+
 
         <EditText
             android:id="@+id/scorePlayer1"
@@ -65,21 +68,23 @@
             >
 
             <EditText
-                android:id="@+id/namePlayer2"
-                android:layout_width="140dp"
-                android:layout_height="match_parent"
-                android:textSize="25sp" />
-
-            <EditText
                 android:id="@+id/scorePlayer2Upsidedown"
-                android:layout_width="80dp"
+                android:layout_width="70dp"
                 android:layout_height="match_parent"
+                android:background="@android:color/transparent"
                 android:editable="false"
                 android:gravity="center"
                 android:rotation="180"
-                android:textSize="25sp"
-                android:background="@android:color/transparent"
-                />
+                android:textSize="25sp" />
+
+            <EditText
+                android:id="@+id/namePlayer2"
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:textSize="25sp" />
+
+
 
             <EditText
                 android:id="@+id/scorePlayer2"
@@ -105,20 +110,23 @@
             >
 
             <EditText
-                android:id="@+id/namePlayer3"
-                android:layout_width="140dp"
-                android:layout_height="match_parent"
-                android:textSize="25sp" />
-
-            <EditText
                 android:id="@+id/scorePlayer3Upsidedown"
-                android:layout_width="80dp"
+                android:layout_width="70dp"
                 android:layout_height="match_parent"
                 android:background="@android:color/transparent"
                 android:editable="false"
                 android:gravity="center"
                 android:rotation="180"
                 android:textSize="25sp" />
+
+            <EditText
+                android:id="@+id/namePlayer3"
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:textSize="25sp" />
+
+
 
             <EditText
                 android:id="@+id/scorePlayer3"
@@ -144,20 +152,23 @@
             >
 
             <EditText
-                android:id="@+id/namePlayer4"
-                android:layout_width="140dp"
-                android:layout_height="match_parent"
-                android:textSize="25sp" />
-
-            <EditText
                 android:id="@+id/scorePlayer4Upsidedown"
-                android:layout_width="80dp"
+                android:layout_width="70dp"
                 android:layout_height="match_parent"
                 android:background="@android:color/transparent"
                 android:editable="false"
                 android:gravity="center"
                 android:rotation="180"
                 android:textSize="25sp" />
+
+            <EditText
+                android:id="@+id/namePlayer4"
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:textSize="25sp" />
+
+
 
             <EditText
                 android:id="@+id/scorePlayer4"
@@ -185,20 +196,23 @@
             >
 
             <EditText
-                android:id="@+id/namePlayer5"
-                android:layout_width="140dp"
-                android:layout_height="match_parent"
-                android:textSize="25sp" />
-
-            <EditText
                 android:id="@+id/scorePlayer5Upsidedown"
-                android:layout_width="80dp"
+                android:layout_width="70dp"
                 android:layout_height="match_parent"
                 android:background="@android:color/transparent"
                 android:editable="false"
                 android:gravity="center"
                 android:rotation="180"
                 android:textSize="25sp" />
+
+            <EditText
+                android:id="@+id/namePlayer5"
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:textSize="25sp" />
+
+
 
             <EditText
                 android:id="@+id/scorePlayer5"
@@ -224,20 +238,23 @@
             >
 
             <EditText
-                android:id="@+id/namePlayer6"
-                android:layout_width="140dp"
-                android:layout_height="match_parent"
-                android:textSize="25sp" />
-
-            <EditText
                 android:id="@+id/scorePlayer6Upsidedown"
-                android:layout_width="80dp"
+                android:layout_width="70dp"
                 android:layout_height="match_parent"
                 android:background="@android:color/transparent"
                 android:editable="false"
                 android:gravity="center"
                 android:rotation="180"
                 android:textSize="25sp" />
+
+            <EditText
+                android:id="@+id/namePlayer6"
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:textSize="25sp" />
+
+
 
             <EditText
                 android:id="@+id/scorePlayer6"
@@ -365,6 +382,19 @@
             android:gravity="center"
             />
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom">
+        <Button
+            android:id="@+id/buttonHideEmptyPlayers"
+            android:layout_width="90dp"
+            android:layout_height="60dp"
+            android:layout_marginRight="5dp"
+            android:textSize="12sp"
+            android:text="Скрыть" />
     </LinearLayout>
 
 
