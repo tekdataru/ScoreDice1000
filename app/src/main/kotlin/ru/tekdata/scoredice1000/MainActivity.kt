@@ -1,6 +1,7 @@
 package ru.tekdata.scoredice1000
 
 import android.content.Context
+import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -22,6 +23,8 @@ class MainActivity : AppCompatActivity() {
         //setContentView(R.layout.activity_main)
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.layoutSettings.visibility = LinearLayout.GONE
 
         binding.namePlayer1.setText("Костя")
 //      binding.namePlayer2.setText("Маша")
@@ -64,10 +67,10 @@ class MainActivity : AppCompatActivity() {
         binding.buttonHideEmptyPlayers.setOnClickListener{
             var vv = LinearLayout.VISIBLE
 
-            if (binding.buttonHideEmptyPlayers.text.equals("Скрыть")) {
-                binding.buttonHideEmptyPlayers.setText("Показать")
+            if (binding.buttonHideEmptyPlayers.text.equals("Скрыть +")) {
+                binding.buttonHideEmptyPlayers.setText("Скрыть -")
                 vv = LinearLayout.GONE
-            } else binding.buttonHideEmptyPlayers.setText("Скрыть")
+            } else binding.buttonHideEmptyPlayers.setText("Скрыть +")
 
             if (binding.namePlayer1.text.isEmpty()) {binding.linearPlayer1.visibility = vv}
             if (binding.namePlayer2.text.isEmpty()) {binding.linearPlayer2.visibility = vv}
@@ -103,12 +106,12 @@ class MainActivity : AppCompatActivity() {
 
             if (button.text.equals("Кнопки +")) {
                 button.setText("Кнопки -")
-                widthInPixels = (binding.button0.width * 1.5).toInt()
-                heightInPixels = (binding.button0.height * 1.5).toInt()
+                widthInPixels = (binding.button0.width * 1.4).toInt()
+                heightInPixels = (binding.button0.height * 1.4).toInt()
             } else {
                 button.setText("Кнопки +")
-                widthInPixels = (binding.button0.width / 1.5).toInt()
-                heightInPixels = (binding.button0.height / 1.5).toInt()
+                widthInPixels = (binding.button0.width / 1.4).toInt()
+                heightInPixels = (binding.button0.height / 1.4).toInt()
             }
 
             buttonSetLayoutParams(binding.button0, widthInPixels, heightInPixels)
@@ -129,23 +132,23 @@ class MainActivity : AppCompatActivity() {
             if (button.text.equals("Цвета +")) {
                 button.setText("Цвета -")
 
-                binding.namePlayer2.setTextColor(android.graphics.Color.BLUE)
-                binding.namePlayer3.setTextColor(android.graphics.Color.RED)
-                binding.namePlayer4.setTextColor(android.graphics.Color.GREEN)
-                binding.namePlayer5.setTextColor(android.graphics.Color.YELLOW)
-                binding.namePlayer6.setTextColor(android.graphics.Color.MAGENTA)
+                binding.namePlayer2.setTextColor(android.graphics.Color.GREEN)
+                binding.namePlayer3.setTextColor(android.graphics.Color.YELLOW)
+                binding.namePlayer4.setTextColor(android.graphics.Color.RED)
+                binding.namePlayer5.setTextColor(android.graphics.Color.MAGENTA)
+                binding.namePlayer6.setTextColor(android.graphics.Color.BLUE)
 
-                binding.scorePlayer2.setTextColor(android.graphics.Color.BLUE)
-                binding.scorePlayer3.setTextColor(android.graphics.Color.RED)
-                binding.scorePlayer4.setTextColor(android.graphics.Color.GREEN)
-                binding.scorePlayer5.setTextColor(android.graphics.Color.YELLOW)
-                binding.scorePlayer6.setTextColor(android.graphics.Color.MAGENTA)
+                binding.scorePlayer2.setTextColor(android.graphics.Color.GREEN)
+                binding.scorePlayer3.setTextColor(android.graphics.Color.YELLOW)
+                binding.scorePlayer4.setTextColor(android.graphics.Color.RED)
+                binding.scorePlayer5.setTextColor(android.graphics.Color.MAGENTA)
+                binding.scorePlayer6.setTextColor(android.graphics.Color.BLUE)
 
-                binding.scorePlayer2Upsidedown.setTextColor(android.graphics.Color.BLUE)
-                binding.scorePlayer3Upsidedown.setTextColor(android.graphics.Color.RED)
-                binding.scorePlayer4Upsidedown.setTextColor(android.graphics.Color.GREEN)
-                binding.scorePlayer5Upsidedown.setTextColor(android.graphics.Color.YELLOW)
-                binding.scorePlayer6Upsidedown.setTextColor(android.graphics.Color.MAGENTA)
+                binding.scorePlayer2Upsidedown.setTextColor(android.graphics.Color.GREEN)
+                binding.scorePlayer3Upsidedown.setTextColor(android.graphics.Color.YELLOW)
+                binding.scorePlayer4Upsidedown.setTextColor(android.graphics.Color.RED)
+                binding.scorePlayer5Upsidedown.setTextColor(android.graphics.Color.MAGENTA)
+                binding.scorePlayer6Upsidedown.setTextColor(android.graphics.Color.BLUE)
             } else {
                 button.setText("Цвета +")
 
